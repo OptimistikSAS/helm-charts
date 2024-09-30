@@ -1,0 +1,23 @@
+{{- if .Values.oibus.persistence.data.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "oibus.fullname" . }}-data
+  labels:
+    {{- include "oibus.labels" . | nindent 4 }}
+  {{- with .Values.oibus.persistence.data.labels }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- if .Values.oibus.persistence.data.storageClass }}
+  storageClassName: {{ .Values.oibus.persistence.data.storageClass }}
+  {{- end }}
+  {{- if .Values.oibus.persistence.data.volumeName }}
+  volumeName: {{ .Values.oibus.persistence.data.volumeName }}
+  {{- end }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.oibus.persistence.data.storageSize | default "8Mi"}}
+{{- end }}
