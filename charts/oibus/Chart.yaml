@@ -1,5 +1,5 @@
 apiVersion: v2
-name: OIBus
+name: oibus  # must be lowercase
 description: OIBus - Data collection solution
 
 # A chart can be either an 'application' or a 'library' chart.
