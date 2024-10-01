@@ -11,14 +11,4 @@ entries:
     urls:
     - https://github.com/OptimistikSAS/helm-charts/releases/download/oibus-3.4.5-docker-1/oibus-3.4.5-docker-1.tgz
     version: 3.4.5-docker-1
-  - apiVersion: v2
-    appVersion: v3.4.5-docker-1
-    created: "2024-10-01T09:26:47.635419134Z"
-    description: OIBus - Data collection solution
-    digest: d24a8e0c162b6d73418cb51273a6768a86b265476524260cd9f2e850e2379e78
-    name: oibus
-    type: application
-    urls:
-    - https://github.com/OptimistikSAS/helm-charts/releases/download/oibus-3.4.5-docker-1/oibus-3.4.5-docker-1.tgz
-    version: 3.4.5-docker-1
 generated: "2024-10-01T09:26:47.635433361Z"
