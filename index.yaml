@@ -3,46 +3,6 @@ entries:
   oibus:
   - apiVersion: v2
     appVersion: v3.4.5-docker-1
-    created: "2024-10-01T08:15:46.349418892Z"
-    description: OIBus - Data collection solution
-    digest: a60feb77936c8f420fc8a6d9e6a5b5ab95893652d8bc88347c015516a3f9df87
-    name: oibus
-    type: application
-    urls:
-    - https://github.com/OptimistikSAS/helm-charts/releases/download/oibus-3.4.5-docker-1/oibus-3.4.5-docker-1.tgz
-    version: 3.4.5-docker-1
-  - apiVersion: v2
-    appVersion: v3.4.5-docker-1
-    created: "2024-10-01T12:13:05.981405933Z"
-    description: OIBus - Data collection solution
-    digest: 74008ec587f9b084b112a0317bd1e6c4708dd5c359bef10a0079554419665400
-    home: https://github.com/OptimistikSAS/OIBus
-    icon: https://github.com/OptimistikSAS/OIBus/blob/main/frontend/public/oibus.png?raw=true
-    name: oibus
-    sources:
-    - https://github.com/OptimistikSAS/OIBus
-    - https://github.com/OptimistikSAS/helm-charts
-    type: application
-    urls:
-    - https://github.com/OptimistikSAS/helm-charts/releases/download/oibus-3.4.5-docker-1/oibus-3.4.5-docker-1.tgz
-    version: 3.4.5-docker-1
-  - apiVersion: v2
-    appVersion: v3.4.5-docker-1
-    created: "2024-10-01T13:02:00.660854416Z"
-    description: OIBus - Data collection solution
-    digest: 74b25ec783d328ecd6b1b7d55e4c694344582ceb362f533e70f74829f13939d2
-    home: https://github.com/OptimistikSAS/OIBus
-    icon: https://github.com/OptimistikSAS/OIBus/blob/main/frontend/public/oibus.png?raw=true
-    name: oibus
-    sources:
-    - https://github.com/OptimistikSAS/OIBus
-    - https://github.com/OptimistikSAS/helm-charts
-    type: application
-    urls:
-    - https://github.com/OptimistikSAS/helm-charts/releases/download/oibus-3.4.5-docker-1/oibus-3.4.5-docker-1.tgz
-    version: 3.4.5-docker-1
-  - apiVersion: v2
-    appVersion: v3.4.5-docker-1
     created: "2024-10-01T13:16:35.186922188Z"
     description: OIBus - Data collection solution
     digest: a79a6c3aee6a9963bab7b302fe628d59ade728ac291aa3f35eef1505ef892380
