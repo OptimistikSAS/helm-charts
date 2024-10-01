@@ -2,5 +2,56 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update oibus docker image references",
+      "fileMatch": [
+        "^charts\\/oibus\\/Chart\\.yaml$"
+      ],
+      "matchStrings": [
+        "appVersion: 'v(?<currentValue>.*?)'\\s+",
+        "version: '(?<currentValue>.*?)'\\s+"
+      ],
+      "depNameTemplate": "ghcr.io/optimistiksas/oibus",
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "description": "Update oibus docker image references",
+      "fileMatch": [
+        "^charts\\/oibus\\/README\\.md$"
+      ],
+      "matchStrings": [
+        "\\|\\s+image.tag\\s+\\|\\s+string\\s+\\|\\s+`\"(?<currentValue>.*?)\"`\\s+\\|\\s+",
+        "(:\\s|-)(?<currentValue>\\d+\\.\\d+\\.\\d+(?:\\+\\d+)?)"
+      ],
+      "depNameTemplate": "ghcr.io/optimistiksas/oibus",
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Don't require approval for oibus major updates",
+      "matchPackageNames": ["ghcr.io/optimistiksas/oibus"],
+      "matchDatasources": ["docker"],
+      "dependencyDashboardApproval": false
+    },
+    {
+      "matchFileNames": ["charts/oibus/README.md"],
+      "schedule": null,
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "deps",
+      "additionalBranchPrefix": ""
+    },
+    {
+      "description": "Use fix semantic commit scope for oibus updates",
+      "matchDepNames": [
+        "ghcr.io/optimistiksas/oibus"
+      ],
+      "semanticCommitType": "fix",
+      "semanticCommitScope": null
+    }
   ]
 }
