@@ -4,7 +4,7 @@
 
 OIBus - Data collection solution
 
-**Homepage:** <https://github.com/renovatebot/renovate>
+**Homepage:** <https://github.com/OptimistikSAS/OIBus>
 
 ## Installation
 
