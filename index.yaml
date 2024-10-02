@@ -2,6 +2,21 @@ apiVersion: v1
 entries:
   oibus:
   - apiVersion: v2
+    appVersion: v3.4.6
+    created: "2024-10-02T14:00:29.733639674Z"
+    description: OIBus - Data collection solution
+    digest: 482a3e03a857ff55a0706043648f26a50d2865d17ec9eecd01e19025536380ed
+    home: https://github.com/OptimistikSAS/OIBus
+    icon: https://github.com/OptimistikSAS/OIBus/blob/main/frontend/public/oibus.png?raw=true
+    name: oibus
+    sources:
+    - https://github.com/OptimistikSAS/OIBus
+    - https://github.com/OptimistikSAS/helm-charts
+    type: application
+    urls:
+    - https://github.com/OptimistikSAS/helm-charts/releases/download/oibus-3.4.6/oibus-3.4.6.tgz
+    version: 3.4.6
+  - apiVersion: v2
     appVersion: v3.4.5
     created: "2024-10-02T08:28:54.670443753Z"
     description: OIBus - Data collection solution
@@ -31,4 +46,4 @@ entries:
     urls:
     - https://github.com/OptimistikSAS/helm-charts/releases/download/oibus-3.4.5-docker-1/oibus-3.4.5-docker-1.tgz
     version: 3.4.5-docker-1
-generated: "2024-10-02T08:28:54.670456156Z"
+generated: "2024-10-02T14:00:29.733657117Z"
