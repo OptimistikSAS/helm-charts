@@ -14,7 +14,7 @@ image:
   tag: ""
 
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
-imagePullSecrets: 
+imagePullSecrets:
 # This is to override the chart name.
 nameOverride: ""
 fullnameOverride: ""
@@ -123,7 +123,7 @@ oibus:
   persistence:
     data:
       # -- Allow the data to persist between pod renewal
-      enabled: true #false
+      enabled: true
       # -- Storage class of the data PVC
       storageClass: ""
       # -- Storage size of the data PVC Mi or Gi
