@@ -10,3 +10,5 @@ home: https://github.com/OptimistikSAS/OIBus
 sources:
   - https://github.com/OptimistikSAS/OIBus
   - https://github.com/OptimistikSAS/helm-charts
+maintainers:
+  - name: Optimistik
