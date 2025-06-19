@@ -3,6 +3,9 @@
   "extends": [
     "config:recommended"
   ],
+  "helm": {
+    "enabled": true
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -52,6 +55,22 @@
       ],
       "semanticCommitType": "fix",
       "semanticCommitScope": null
+    },
+    {
+      "matchManagers": ["helm"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchPaths": ["charts/"],
+      "enabled": true,
+      "matchPackagePatterns": ["*"],
+      "versioning": "semver"
+    },
+    {
+      "matchManagers": ["helm"],
+      "matchFiles": ["Chart.yaml"],
+      "matchPackageNames": ["oibus"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "enabled": true,
+      "versioning": "regex:v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)"
     }
   ]
 }
