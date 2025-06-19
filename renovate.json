@@ -11,8 +11,8 @@
         "^charts\\/oibus\\/Chart\\.yaml$"
       ],
       "matchStrings": [
-        "appVersion: 'v(?<currentValue>.*?)'\\s+",
-        "version: '(?<currentValue>.*?)'\\s+"
+        "appVersion:\\s+v(?<currentValue>.*)",
+        "version:\\s+(?<currentValue>.*)"
       ],
       "depNameTemplate": "ghcr.io/optimistiksas/oibus",
       "datasourceTemplate": "docker"
