@@ -1,6 +1,6 @@
 # oibus
 
-![Version: 3.6.1](https://img.shields.io/badge/Version-3.6.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.6.1](https://img.shields.io/badge/AppVersion-v3.6.1-informational?style=flat-square)
+![Version: 3.6.1-fix-pvc](https://img.shields.io/badge/Version-3.6.1--fix--pvc-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.6.1](https://img.shields.io/badge/AppVersion-v3.6.1-informational?style=flat-square)
 
 OIBus - Data collection solution
 
