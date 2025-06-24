@@ -1,4 +1,4 @@
-{{- if .Values.oibus.persistence.data.enabled }}
+{{- if and .Values.oibus.persistence.data.enabled (not .Values.oibus.persistence.data.existingClaim) }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -7,6 +7,10 @@ metadata:
     {{- include "oibus.labels" . | nindent 4 }}
   {{- with .Values.oibus.persistence.data.labels }}
     {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- if .Values.oibus.persistence.data.keepPVC }}
+  annotations:
+    helm.sh/resource-policy: keep
   {{- end }}
 spec:
   {{- if .Values.oibus.persistence.data.storageClass }}

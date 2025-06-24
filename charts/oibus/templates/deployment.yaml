@@ -61,7 +61,7 @@ spec:
       {{- if .Values.oibus.persistence.data.enabled }}
       - name: {{ include "oibus.fullname" . }}-data
         persistentVolumeClaim:
-          claimName: {{ include "oibus.fullname" . }}-data
+          claimName: {{ if .Values.oibus.persistence.data.existingClaim }}{{ .Values.oibus.persistence.data.existingClaim }}{{- else }}{{ include "oibus.fullname" . }}-data{{- end }}
       {{- end }}
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}

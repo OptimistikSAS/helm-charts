@@ -132,3 +132,8 @@ oibus:
       volumeName: ""
       # -- Labels to set on the data PVC
       labels: {}
+      # -- Keep a created Persistent volume claim when uninstalling the helm chart (default: false)
+      keepPVC: false
+      # If you want to reuse an existing claim, you can pass the name of the PVC using the existingClaim variable
+      # -- Use an existing PVC to persist data
+      # existingClaim: your-claim
