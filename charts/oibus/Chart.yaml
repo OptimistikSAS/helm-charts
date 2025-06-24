@@ -2,7 +2,7 @@ apiVersion: v2
 name: oibus  # must be lowercase
 description: OIBus - Data collection solution
 type: application
-version: 3.6.1-fix-pvc
+version: 3.6.1-fix-pvc.1
 appVersion: v3.6.1
 
 icon: https://github.com/OptimistikSAS/OIBus/blob/main/frontend/public/oibus.png?raw=true

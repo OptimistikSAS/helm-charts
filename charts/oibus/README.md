@@ -1,6 +1,6 @@
 # oibus
 
-![Version: 3.6.1-fix-pvc](https://img.shields.io/badge/Version-3.6.1--fix--pvc-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.6.1](https://img.shields.io/badge/AppVersion-v3.6.1-informational?style=flat-square)
+![Version: 3.6.1-fix-pvc.1](https://img.shields.io/badge/Version-3.6.1--fix--pvc.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.6.1](https://img.shields.io/badge/AppVersion-v3.6.1-informational?style=flat-square)
 
 OIBus - Data collection solution
 
@@ -50,8 +50,9 @@ The following table lists the configurable parameters of the chart and the defau
 | livenessProbe.periodSeconds | int | `3` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
-| oibus.persistence | object | `{"data":{"enabled":true,"keepPVC":false,"labels":{},"storageClass":"","storageSize":"1Gi","volumeName":""}}` | Options related to persistence |
+| oibus.persistence | object | `{"data":{"enabled":true,"existingClaim":"","keepPVC":false,"labels":{},"storageClass":"","storageSize":"1Gi","volumeName":""}}` | Options related to persistence |
 | oibus.persistence.data.enabled | bool | `true` | Allow the data to persist between pod renewal |
+| oibus.persistence.data.existingClaim | string | `""` | Use an existing PVC to persist data |
 | oibus.persistence.data.keepPVC | bool | `false` | Keep a created Persistent volume claim when uninstalling the helm chart (default: false) |
 | oibus.persistence.data.labels | object | `{}` | Labels to set on the data PVC |
 | oibus.persistence.data.storageClass | string | `""` | Storage class of the data PVC |
