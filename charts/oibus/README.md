@@ -50,8 +50,9 @@ The following table lists the configurable parameters of the chart and the defau
 | livenessProbe.periodSeconds | int | `3` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
-| oibus.persistence | object | `{"data":{"enabled":true,"labels":{},"storageClass":"","storageSize":"1Gi","volumeName":""}}` | Options related to persistence |
+| oibus.persistence | object | `{"data":{"enabled":true,"keepPVC":false,"labels":{},"storageClass":"","storageSize":"1Gi","volumeName":""}}` | Options related to persistence |
 | oibus.persistence.data.enabled | bool | `true` | Allow the data to persist between pod renewal |
+| oibus.persistence.data.keepPVC | bool | `false` | Keep a created Persistent volume claim when uninstalling the helm chart (default: false) |
 | oibus.persistence.data.labels | object | `{}` | Labels to set on the data PVC |
 | oibus.persistence.data.storageClass | string | `""` | Storage class of the data PVC |
 | oibus.persistence.data.storageSize | string | `"1Gi"` | Storage size of the data PVC Mi or Gi |
