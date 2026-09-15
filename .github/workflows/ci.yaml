@@ -63,15 +63,21 @@ jobs:
           BRANCH="${{ github.head_ref || github.ref_name }}"
           if ! git diff --quiet; then
             if [[ "$BRANCH" == renovate/* ]]; then
+              # Fold the docs fix into Renovate's own commit (as renovate[bot]) instead of
+              # stacking a second one, since these branches are single-commit bumps that
+              # Renovate itself will keep rewriting anyway.
               git config user.name "renovate[bot]"
               git config user.email "29139614+renovate[bot]@users.noreply.github.com"
+              git add -A
+              git commit --amend --no-edit
+              git push --force-with-lease origin HEAD:"$BRANCH"
             else
               git config user.name "github-actions[bot]"
               git config user.email "github-actions[bot]@users.noreply.github.com"
+              git add -A
+              git commit -m "docs: regenerate helm-docs"
+              git push origin HEAD:"$BRANCH"
             fi
-            git add -A
-            git commit -m "docs: regenerate helm-docs"
-            git push origin HEAD:"$BRANCH"
           fi
 
       - name: Fail if generated docs are still out of date
