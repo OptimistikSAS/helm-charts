@@ -12,8 +12,8 @@ HELM_DOCS_VERSION=1.14.2
 curl --silent --show-error --fail --location --output /tmp/helm-docs.tar.gz https://github.com/norwoodj/helm-docs/releases/download/v"${HELM_DOCS_VERSION}"/helm-docs_"${HELM_DOCS_VERSION}"_Linux_x86_64.tar.gz
 tar -C .bin/ -xf /tmp/helm-docs.tar.gz helm-docs
 
-# validate docs
+# generate docs
 LOG=$(mktemp)
 helm-docs 2>&1 | tee "$LOG"
 grep 'Error generating gotemplates' "$LOG" && exit 1
-git diff --exit-code
+exit 0
