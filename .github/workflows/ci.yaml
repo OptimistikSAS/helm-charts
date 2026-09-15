@@ -53,15 +53,25 @@ jobs:
 
       # Same-repo branches (main, and Renovate's own PR branches) can be auto-fixed:
       # push the regenerated docs back so the branch stays green without manual intervention.
+      #
+      # On renovate/** branches we commit as renovate[bot] itself: Renovate refuses to
+      # auto-rebase a branch whose last commit author it doesn't recognize (it assumes a
+      # human edited the PR), so matching its own commit identity keeps that automation working.
       - name: Auto-commit regenerated docs
         if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
         run: |
+          BRANCH="${{ github.head_ref || github.ref_name }}"
           if ! git diff --quiet; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
+            if [[ "$BRANCH" == renovate/* ]]; then
+              git config user.name "renovate[bot]"
+              git config user.email "29139614+renovate[bot]@users.noreply.github.com"
+            else
+              git config user.name "github-actions[bot]"
+              git config user.email "github-actions[bot]@users.noreply.github.com"
+            fi
             git add -A
             git commit -m "docs: regenerate helm-docs"
-            git push origin HEAD:${{ github.head_ref || github.ref_name }}
+            git push origin HEAD:"$BRANCH"
           fi
 
       - name: Fail if generated docs are still out of date
