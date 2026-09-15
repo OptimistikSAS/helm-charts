@@ -1,6 +1,6 @@
 # oibus
 
-![Version: 3.6.2](https://img.shields.io/badge/Version-3.6.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.6.2](https://img.shields.io/badge/AppVersion-v3.6.2-informational?style=flat-square)
+![Version: 3.6.3](https://img.shields.io/badge/Version-3.6.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.6.3](https://img.shields.io/badge/AppVersion-v3.6.3-informational?style=flat-square)
 
 OIBus - Data collection solution
 
@@ -68,6 +68,7 @@ The following table lists the configurable parameters of the chart and the defau
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
+| service.nodePort | string | `nil` |  |
 | service.port | int | `2223` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
