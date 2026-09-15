@@ -16,19 +16,6 @@
       ],
       "depNameTemplate": "ghcr.io/optimistiksas/oibus",
       "datasourceTemplate": "docker"
-    },
-    {
-      "customType": "regex",
-      "description": "Update oibus docker image references",
-      "fileMatch": [
-        "^charts\\/oibus\\/README\\.md$"
-      ],
-      "matchStrings": [
-        "\\|\\s+image.tag\\s+\\|\\s+string\\s+\\|\\s+`\"(?<currentValue>.*?)\"`\\s+\\|\\s+",
-        "(:\\s|-)(?<currentValue>\\d+\\.\\d+\\.\\d+(?:\\+\\d+)?)"
-      ],
-      "depNameTemplate": "ghcr.io/optimistiksas/oibus",
-      "datasourceTemplate": "docker"
     }
   ],
   "packageRules": [
@@ -37,13 +24,6 @@
       "matchPackageNames": ["ghcr.io/optimistiksas/oibus"],
       "matchDatasources": ["docker"],
       "dependencyDashboardApproval": false
-    },
-    {
-      "matchFileNames": ["charts/oibus/README.md"],
-      "schedule": null,
-      "semanticCommitType": "chore",
-      "semanticCommitScope": "deps",
-      "additionalBranchPrefix": ""
     },
     {
       "description": "Use fix semantic commit scope for oibus updates",
