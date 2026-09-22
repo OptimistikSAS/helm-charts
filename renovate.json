@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update oibus docker image references",
+      "fileMatch": [
+        "^charts\\/oibus\\/Chart\\.yaml$"
+      ],
+      "matchStrings": [
+        "appVersion:\\s+v(?<currentValue>.*)",
+        "version:\\s+(?<currentValue>.*)"
+      ],
+      "depNameTemplate": "ghcr.io/optimistiksas/oibus",
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Don't require approval for oibus major updates",
+      "matchPackageNames": ["ghcr.io/optimistiksas/oibus"],
+      "matchDatasources": ["docker"],
+      "dependencyDashboardApproval": false
+    },
+    {
+      "description": "Use fix semantic commit scope for oibus updates",
+      "matchDepNames": [
+        "ghcr.io/optimistiksas/oibus"
+      ],
+      "semanticCommitType": "fix",
+      "semanticCommitScope": null
+    }
+  ]
+}
