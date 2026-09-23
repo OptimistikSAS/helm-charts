@@ -43,10 +43,15 @@ jobs:
     permissions:
       contents: write
     steps:
+      # fetch-depth: 0 is required by the amend below: in a shallow clone the tip commit
+      # is grafted to have no parents, so `git commit --amend` rebuilds it as a parentless
+      # root commit. Force-pushing that leaves the PR head with no common ancestor with the
+      # base branch, and GitHub auto-closes the PR.
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.head_ref || github.ref }}
+          fetch-depth: 0
 
       - name: Run helm-docs
         run: .github/helm-docs.sh
