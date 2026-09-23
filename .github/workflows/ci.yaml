@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - 'renovate/**'
   pull_request:
 
 concurrency:
@@ -121,7 +120,6 @@ jobs:
   install-chart:
     name: install-chart
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' || github.repository_owner != github.event.pull_request.head.repo.owner.login || !startsWith(github.event.pull_request.head.ref, 'renovate/') }}
     needs:
       - lint-chart
       - lint-docs
