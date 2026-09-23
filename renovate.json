@@ -7,8 +7,8 @@
     {
       "customType": "regex",
       "description": "Update oibus docker image references",
-      "fileMatch": [
-        "^charts\\/oibus\\/Chart\\.yaml$"
+      "managerFilePatterns": [
+        "/^charts\\/oibus\\/Chart\\.yaml$/"
       ],
       "matchStrings": [
         "appVersion:\\s+v(?<currentValue>.*)",
